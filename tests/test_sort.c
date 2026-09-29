@@ -129,7 +129,7 @@ static void expectManySizes(const SortAlgorithm *algo) {
             if (a[i].key != want[i].key) {
                 ok = 0;
             }
-            if (i > 0 && a[i - 1].key == a[i].key && a[i - 1].tag > a[i].tag) {
+            if (algo->stable && i > 0 && a[i - 1].key == a[i].key && a[i - 1].tag > a[i].tag) {
                 ok = 0; /* 같은 key인데 입력 순서가 뒤집혔다 */
             }
         }
